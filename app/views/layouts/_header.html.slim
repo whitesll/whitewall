@@ -1,0 +1,19 @@
+header
+  .left-bar
+    .left-bar__title
+      = link_to root_path
+        = image_tag "favicon.ico"
+        p WhiteWall
+  .right-bar
+    .right-bar__about
+      = link_to "About","/videos/about"
+    - if user_signed_in?
+      .right-bar__login
+        = link_to "ログアウト",destroy_user_session_path, method: :delete
+      .right-bar__user
+        = link_to current_user.nickname,"/users/#{current_user.id}"
+    - else
+      .right-bar__login
+        = link_to "ログイン",new_user_session_path
+      .right-bar__user
+        = link_to "新規登録",new_user_registration_path

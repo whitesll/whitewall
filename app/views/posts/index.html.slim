@@ -1,0 +1,23 @@
+= render "layouts/sidebar-left"
+.post
+  .post-title
+    .post-enpty
+    h1 掲示板一覧
+    .post-new
+      = link_to "掲示板作成へ",new_post_path
+  .post-search
+    = search_form_for @search, url: posts_path do |f|
+      = f.search_field :title_cont, placeholder: "掲示板を検索"
+  .post-area
+    - @posts.each do |post|
+      .content
+        .content__left
+          .content__left__image
+            = image_tag "#{post.game.gameimage}"
+        .content__right
+          .content__right__top
+            = post.game.gametitle
+        .content__right__bottom
+          .content__right__bottom__title
+            = link_to post.title, post_path(post.id)
+  = paginate(@posts)

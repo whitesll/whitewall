@@ -1,0 +1,11 @@
+div class="#{videocomment_change(videocomment.likes_count)}"
+  = videocomment.comment
+  br
+  - if current_user.videolikes.find_by(videocomment_id: videocomment.id)
+    = link_to videounlike_path(videocomment.id), method: :delete, remote: true do
+      .iine__button
+        |❤️ #{videocomment.likes_count}
+  - else
+    = link_to videolike_path(videocomment.id), method: :post, remote: true do 
+      .iine__button
+        |♡️ #{videocomment.likes_count}

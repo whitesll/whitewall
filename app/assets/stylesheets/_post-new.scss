@@ -1,0 +1,79 @@
+.content-title{
+  height: 800px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-image:  image-url("background.png");
+  background-size:  cover;
+  padding-top: 20px;
+  h1{
+    border-radius: 10px;
+    border: 10px outset #f6ff47;
+    padding: 0 8px;
+    background-color: #a7d3aa;
+    margin: 0 auto;
+    font-size: 48px;
+    width: 400px;
+    height: 75px;
+  }
+  p{
+    font-size: 24px;
+    padding-top: 20px;
+  }
+  .content-field{
+    &__radio{
+      display: flex;
+      justify-content: center;
+      margin-left: 34px;
+      input{
+        width: 55px;
+        height: 30px;
+        margin-left: 32px;
+      }
+    }
+    &__image{
+      display: flex;
+      justify-content: center;
+      &__game{
+        height: 55px;
+        width: 55px;
+        border: solid 1px;
+        margin-left: 30px;
+        img{
+          height: 55px;
+          width: 55px;             
+        }
+      }
+    }
+    &__title{
+      input{
+        width: 400px;
+        height: 30px;
+        border-radius: 10px;
+        padding: 4px 0px 0px 10px;
+        border: 2px solid rgb(135, 135, 135);
+        margin-top: 5px;
+      }
+  }
+    &__btn{
+       margin-top: 100px;
+      input{
+        width: 410px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgb(209, 220, 9);
+        color: white;
+        cursor: pointer;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+        border-bottom: solid 3px #bcae16;
+        &:active {
+          -webkit-transform: translateY(4px);
+          transform: translateY(4px);
+          box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+          border-bottom: none;
+          cursor: pointer;
+        }
+      } 
+    }
+  }
+}

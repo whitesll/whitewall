@@ -1,0 +1,21 @@
+.pagination{
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  color: white;
+  li{
+    border: solid 1.0px;
+    a{
+      margin: 0 30px;
+      text-align: center;
+      width: 15px;
+    }
+    a:hover{
+      border-radius: 15px;
+    }
+  }
+  .active{
+    background: #93c9ff;
+  }
+}

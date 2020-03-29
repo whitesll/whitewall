@@ -1,0 +1,31 @@
+= javascript_include_tag "jquery.sidebar.min.js"
+= javascript_include_tag "sidebar.js"
+.btn data-action="toggle" data-side="left"
+  | ♦
+.sidebar.left
+  .title
+    = link_to "掲示板一覧", posts_path
+  .game
+    .game__name
+      = link_to "civilization5", posts_path(game_id: 1)
+    .game__name
+      = link_to "WoWs", posts_path(game_id: 2)
+    .game__name
+      = link_to "Wot", posts_path(game_id: 3)
+    .game__name
+      = link_to "東方蟒酒宴", posts_path(game_id: 4)
+    .game__name
+      = link_to "aoe2", posts_path(game_id: 5)
+  .title
+      = link_to "動画一覧", root_path
+  .game
+    .game__name
+      = link_to "civilization5", root_path(game_id: 1)
+    .game__name
+      = link_to "WoWs", root_path(game_id: 2)
+    .game__name
+      = link_to "Wot", root_path(game_id: 3)
+    .game__name
+      = link_to "東方蟒酒宴", root_path(game_id: 4)
+    .game__name
+      = link_to "aoe2", root_path(game_id: 5)

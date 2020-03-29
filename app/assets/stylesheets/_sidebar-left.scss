@@ -1,0 +1,50 @@
+.btn{
+  height: 100vh;
+  width: 35px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 50px;
+  background-color: rgba(167, 246, 255, 0.3);
+  position: fixed;
+  font-size: 34px;
+  cursor: pointer;
+ }
+.sidebar.left {
+  height: 100vh;
+  width: 300px;
+  background: linear-gradient(rgb(172, 5, 255), rgb(0, 229, 255));
+  color: white;
+  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding-top: 50px;
+  z-index: 1;
+  .title{
+    font-size: 26px;
+    text-align: center;
+    padding: 25px;
+    font-family: "ＭＳ ゴシック";
+  }
+  .game{
+    padding-left: 35px;
+    &__name{
+      margin-bottom: 30px;
+      height: 16px;
+      line-height: 32px;
+      a{
+        display: block;
+        width: 150px;
+        background: linear-gradient(rgb(172, 5, 255), rgb(0, 229, 255));
+      }
+      &:hover{
+        transition-duration: 1s;
+        transform: translateX(30px);
+      }
+    }
+
+  }
+}
