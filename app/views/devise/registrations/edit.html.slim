@@ -1,0 +1,32 @@
+.user-edit
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :ユーザー名
+      = f.text_field :nickname, autofocus: true, maxlength: "6" ,placeholder: "ユーザー名"
+    .field
+      = f.label :メールアドレス
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      div
+        | Currently waiting confirmation for: 
+        = resource.unconfirmed_email
+    .field
+      = f.label :パスワード
+      = f.password_field :password, autocomplete: "new-password"
+    p
+      - if @minimum_password_length
+        em
+          | (
+          = @minimum_password_length
+          |  文字以上&変更しない場合は空白のままにします）
+    .field
+      = f.label :パスワード確認
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .field
+      = f.label :現在のパスワード
+      = f.password_field :current_password, autocomplete: "current-password"
+    p
+      | (ユーザーデータを変更するには現在のパスワードが必要です)
+    .actions
+      = f.submit "更新"

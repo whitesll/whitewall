@@ -1,0 +1,30 @@
+= render "layouts/sidebar-left"
+.post-show
+  .post-index
+    .post-title
+      = @post.title
+    .post-area
+      = link_to "掲示板へ戻る",posts_path
+  .news
+    - @comments.each.with_index(1) do |comment, i|
+      .txt
+        .txt__number
+          = i
+        .txt__name
+          = comment.user.nickname
+        .txt__date
+          = comment.created_at.to_s
+      .comment
+        .like-link id="like-link-#{comment.id}"
+          = render 'likes/like', comment: comment
+  .message
+    .message__area
+      = form_with model: [@post,@comment],class: "form", local: true do |f|
+        .message__area__txt
+          p コメント
+          = f.text_area :comment, placeholder: "コメント"
+          label.label
+            = icon('fa', 'image')
+            = f.file_field :image, class: "hoge"
+          .submit-btn
+            = f.submit "投稿する"

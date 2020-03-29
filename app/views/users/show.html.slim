@@ -1,0 +1,13 @@
+.user-show
+  .area
+    .field
+      p ユーザー名
+      .field__user-data
+        =@nickname
+  .area
+    .field
+      p メールアドレス
+      .field__user-data
+        =current_user.email
+  .actions
+    = link_to "ユーザー編集","/users/edit"

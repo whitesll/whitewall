@@ -1,0 +1,27 @@
+.content-title
+  h1 新規掲示板の作成
+  p ゲームの種類を選択してください
+  .content-field
+    = form_with model: @post, class: "form", local: true do |f|
+      .content-field__radio
+        = f.radio_button :game_id, "1"
+        = f.radio_button :game_id, "2"
+        = f.radio_button :game_id, "3"
+        = f.radio_button :game_id, "4"
+        = f.radio_button :game_id, "5"
+      .content-field__image
+        .content-field__image__game
+          = image_tag "civ5.jpg"
+        .content-field__image__game
+          = image_tag "WorldOfWarships.jpg"
+        .content-field__image__game
+          = image_tag "WoT.jpg"
+        .content-field__image__game
+          = image_tag "東方蟒酒宴.jpg"
+        .content-field__image__game
+          = image_tag "aoc2.jpg"
+      p 掲示板のタイトルを入力してください
+      .content-field__title
+        = f.text_field :title, placeholder: "掲示板のタイトル"
+      .content-field__btn
+        = f.submit "掲示板作成"

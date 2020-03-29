@@ -1,0 +1,116 @@
+.post-show{
+  background-image:  image-url("background.png");
+  height: 1100%;
+  width: 100%;
+  padding-top: 30px;
+  background-size:  cover;
+  .post-index{
+    font-size: 48px;
+    color: white;
+    .post-title{
+      border-radius: 10px;
+      border: 10px outset #ffc547;
+      padding: 0 8px;
+      background-color: #ccd3a7;  
+      text-align: center;
+      margin: 0 auto;
+      width: 700px;
+    }
+    .post-area{
+      border-radius: 10px;
+      border: 10px outset #47ff53;
+      padding: 0 8px;
+      background-color: #a7d3aa;
+      text-align: center;
+      width: 150px;
+      height: 50px;
+      font-size: 24px;
+      line-height: 50px;
+      margin: 0 0 0 auto;
+    }
+  }
+  .news{
+    margin: 30px auto 0;
+    height: 600px;
+    width: 70%;
+    overflow: scroll;
+    background-color: #cec8c4;
+    .txt{
+      display: flex;
+      margin-top: 20px;
+      margin-left: 20px;
+      &__number{
+        font-size: 18px;
+      }
+      &__name{
+        font-size: 18px;
+        color: rgb(213, 113, 26);
+        margin-left: 5px;
+      }
+      &__date{
+        font-size: 12px;
+        margin-left: 15px;
+      }
+    }
+    .comment{
+      margin-left: 20px;
+      .comment4{
+        font-size: 38px;
+        font-weight: bold;
+        color: #ff0000;
+      }
+      .comment3{
+        font-size: 36px;
+        color: #ff0000;
+      }
+      .comment2{
+        font-size: 34px;
+      }
+      .comment1{
+        font-size: 32px;
+      }
+      .comment0{
+        font-size: 30px;
+      }
+    }
+  }
+  .message{
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    &__area{
+      font-size: 20px;
+      color: white;
+      &__txt{
+        textarea{
+          width: 800px;
+          height: 120px;
+          border-radius: 10px;
+          padding: 4px 0px 0px 10px;
+          border: 10px outset hsl(299, 100%, 61%);
+        }
+        .hoge{
+          display: none;
+        } 
+        .label{
+          cursor: pointer;
+          font-size:3.0em;
+        }
+        .submit-btn{
+          text-align: center;
+          padding: 70px 0px;
+          input{
+            width: 200px;
+            height: 50px;
+            padding: 0 30px;
+            margin-left: 15px;
+            background-color: #38aef0;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+          }
+        } 
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.video-all
+  h1 ストラテジー動画一覧
+  .video-movie
+    - @videos.each do |video|
+      .video-content
+        .video-content__top
+          img src="#{video.thumbnail}"
+        .video-content__bottom
+          .video-content__bottom__left
+            = image_tag "#{video.game.gameimage}"
+          .video-content__bottom__right
+            .video-content__bottom__right__title
+              = link_to video.title, video_path(video.id)
+            .video-content__bottom__right__views-date
+              | 再生数#{video.views}回・#{video.created_at}
+  = paginate(@videos)

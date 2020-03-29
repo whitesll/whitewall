@@ -1,0 +1,25 @@
+= render "layouts/sidebar-left"
+.video-show
+  .video-show__concept
+    .video-show__concept__search
+      = search_form_for @search, url: root_path do |f|
+        = f.search_field :title_cont, placeholder: "動画を検索"
+    .video-show__concept__area
+      iframe allow=("accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture") allowfullscreen="" frameborder="0" height="472.5" src="https://www.youtube.com/embed/#{@video.url}" width="840"
+    .video-show__concept__description
+      .video-show__concept__description__title
+        = @video.title
+      .video-show__concept__description__views-date
+        | 再生数#{@video.views}回・#{@video.created_at}
+      .video-show__concept__description__text
+        = @video.description
+  .news
+    = render partial: 'videocomments/videocomment', collection: @videocomments
+  .message
+    .message__area
+      = form_with model: [@video,@videocomment],class: "form" do |f|
+        .message__area__txt
+          p コメント
+          = f.text_area :comment, placeholder: "コメント"
+          .submit-btn
+            = f.submit "投稿する"

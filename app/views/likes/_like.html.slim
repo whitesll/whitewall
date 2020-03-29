@@ -1,0 +1,13 @@
+div class="#{comment_change(comment.likes_count)}"
+  = comment.comment
+  br
+  = image_tag "#{comment.image}" if comment.image.present?
+  br
+  - if current_user.likes.find_by(comment_id: comment.id)
+    = link_to unlike_path(comment.id), method: :delete, remote: true do
+      .iine__button
+        |❤️ #{comment.likes_count}
+  - else
+    = link_to like_path(comment.id), method: :post, remote: true do 
+      .iine__button
+        |♡️ #{comment.likes_count}

@@ -1,0 +1,10 @@
+.mainpage
+  h1 WhiteWall
+  p 戦うための戦略がここにある!
+  p こちらはストラテジーゲームプレイヤーを対象としたコミュニティサイトです。
+  p みんなで掲示板、動画などを利用して技術を向上させましょう!
+  = search_form_for @search, url: root_path do |f|
+    = f.search_field :title_cont, placeholder: "動画を検索"
+= render "layouts/sidebar-left"
+= render "videos"
+                
