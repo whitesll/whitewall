@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :like_comments, through: :likes, source: :comment
   has_many :videolikes, dependent: :destroy
   has_many :videolike_comments, through: :videolikes, source: :videocomment
+
+  validates :nickname, presence: true, length: { maximum: 6 }
 end
